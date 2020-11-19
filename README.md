@@ -1,8 +1,18 @@
 # docker版本OCR环境服务端搭建
 ************************
-**目录**
-
-[TOC]
+- [docker版本OCR环境服务端搭建](#docker版本ocr环境服务端搭建)
+  - [1.windows下安装docker](#1windows下安装docker)
+  - [2. 配置docker](#2-配置docker)
+    - [*脚本执行简化后续操作，点击跳转到第6步*](#脚本执行简化后续操作点击跳转到第6步)
+  - [3. 下载阿里云上的镜像到本地](#3-下载阿里云上的镜像到本地)
+  - [4. 使用镜像创建容器](#4-使用镜像创建容器)
+  - [5. 编写脚本执行服务程序](#5-编写脚本执行服务程序)
+  - [6. 执行脚本程序开启OCR服务](#6-执行脚本程序开启ocr服务)
+- [客户端搭建（示例）](#客户端搭建示例)
+    - [客户端发出请求给服务端](#客户端发出请求给服务端)
+- [说明](#说明)
+      - [1. 提供的端口是1278,点击查看](#1-提供的端口是1278点击查看)
+      - [2. 如何访问容器中的文件](#2-如何访问容器中的文件)
 
 ## 1.windows下安装docker
 *基本步骤：*
@@ -44,14 +54,14 @@
 
    > 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
 
-  2. 从Registry中拉取镜像到本机,2.1[^脚注]是版本号
+  2. 从Registry中拉取镜像到本机,2.2[^脚注]是版本号
 
    ```
    $ docker pull registry.cn-shenzhen.aliyuncs.com/zzssjj/ubuntu_20_04_ocr:2.2
    ``` 
 
 
-  [^脚注]: **2.1**是镜像版本号
+  [^脚注]: **2.2**是镜像版本号
 
 ## 4. 使用镜像创建容器
 
@@ -63,7 +73,7 @@
 ## 5. 编写脚本执行服务程序
 
   * 编写Linux自启动脚本
-    - [x] /home/shell_op/**op.sh**
+    - [x] ```/home/shell_op/op.sh```
     ```shell
     cd /home
     cd Projects/
@@ -72,7 +82,7 @@
     ```
 
   * 编写批处理文件
-     - [x] **环境搭建.bat**
+     - [x] [环境搭建.bat](./src/环境搭建.bat)
     ```bat
     ::登录
     echo input password:zsj18846299
@@ -87,7 +97,7 @@
     docker run --name mppocr -it -v C:\mntWin:/home/Projects/PaddleOCR/doc/imgs -p 1278:22 registry.cn-shenzhen.aliyuncs.com/zzssjj/ubuntu_20_04_ocr:2.2 /bin/bash
     ```
   
-      - [x] **PPOCR.bat**
+      - [x] [PPOCR.bat](/src/PPOCR.bat)
     ```bat
     :: 注释：定义 var 变量，这个是容器的名字
     set var=test
@@ -108,9 +118,10 @@
 # 客户端搭建（示例）
   
 ###  客户端发出请求给服务端
+[^脚注2]:这里的路径是指容器上的相对路径
+- *windows CMD下执行*，端口号1278，localhost，识别文件目标: ./doc/imgs/4.jpg[^脚注2]
 
-- *windows CMD下执行*，端口号1278，localhost
-    
+
         $ python httpclient.py 127.0.0.1 1278 ./doc/imgs/4.jpg
 - [httpclient.py](/src/httpclient.py) 
   ``` py
@@ -151,5 +162,6 @@
 #### 2. 如何访问容器中的文件
  - **方式1**：使用docker cp指令，主机文件和docker容器文件互传
  - **方式2**：使用volume共享，创建容器时完成文件挂载[已经实现](#4-使用镜像创建容器)
+  **文件挂载位置**：windows文件卷C:\mntWin对应:/home/Projects/PaddleOCR/doc/imgs,需要识别的文件应放于此
  - **文件不能是加密的**，挂载加密文件在容器中不能正常打开
 
