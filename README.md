@@ -102,8 +102,8 @@
     ```
 
 ## 6. 执行脚本程序开启OCR服务
-* 执行[环境搭建.bat](../环境搭建.bat)
-* 执行[PPOCR.bat](../PPOCR.bat),开启OCR服务
+* 执行[环境搭建.bat](./环境搭建.bat)
+* 执行[PPOCR.bat](./PPOCR.bat),开启OCR服务
 
 # 客户端搭建（示例）
   
