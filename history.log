@@ -1,0 +1,119 @@
+    1  ls
+    2  cd Desktop/
+    3  ls
+    4   git config --global user.name "brillian32"
+    5  git config --global user.email "1730505961@qq.com"
+    6  mkdir.exe  gitResource
+    7  cd gitResource/
+    8  pwd
+    9  git init
+   10  ls -ah
+   11  vim readme.txt
+   12  ls
+   13  git add readme.txt 
+   14  git commit -m "testGit"
+   15  git remote add origin https://github.com/brillian32/MFC_TFigure.git
+   16  git branch -M main
+   17  git commit -m " commit"
+   18  git push -u origin main
+   19  git push -u origin main
+   20  git branch -M main1
+   21  git commit -m "testGit"
+   22  git add Tracker day1 day2
+   23  git push -u origin main1
+   24  ls
+   25  git remote add origin https://github.com/brillian32/MFC_TFigure.git
+   26  git commit -m "MFC_first"
+   27  git push -u origin main1
+   28  cd ..
+   29  ls'
+   30  ls
+   31  git init
+   32  git add MFC_MSDN.pdf 
+   33  git commit -m "first commit"
+   34  git branch -M MSDN_MFC
+   35  git remote add origin https://github.com/brillian32/-----.git
+   36  git push -u origin MSDN_MFC 
+   37  ls
+   38  git clone https://github.com/brillian32/GIT_translation.git
+   39  git init
+   40  git commit  -m 3commit
+   41  git commit  -m "3commit"
+   42  git add *.*
+   43  git commit  -m "3commit"
+   44  git branch -M master3
+   45  git remote add origin https://github.com/brillian32/MFC_TFigure.git
+   46  git push -u origin master3 
+   47   git remote add origin
+   48  git remote add origin https://github.com/brillian32/TFigure.git
+   49  git remote add origin https://github.com/brillian32/MFC_TFigure.git
+   50  git branch -M master4
+   51  git commit -m "4 commit"
+   52  git add *.*
+   53  git commit -m "4 commit"
+   54  git remote add origin https://github.com/brillian32/MFC_TFigure.git
+   55  git remote add origin1 https://github.com/brillian32/MFC_TFigure.git
+   56  git push -u origin1 master4
+   57  git init
+   58  git add *
+   59  git commit -m "first commit"
+   60  git branch -M main
+   61  git remote add origin https://github.com/brillian32/PaddleOCR.git
+   62  git push -u origin main
+   63  ls
+   64  git add inference
+   65  git add -f inference
+   66  git add -f *
+   67  git commit -m "first commit"
+   68  git remote add origin https://github.com/brillian32/-----.git
+   69  zousijia@zhjk-zousijia MINGW64 /f/Users/zousijia/Desktop/PaddleOCR (main)
+   70  $ ls
+   71  __init__.py   folder.ini          ppocr/                   setup.py
+   72  __pycache__/  http.log            predict_system.spec      tools/
+   73  _result.txt   inference/          python-3.7.7-amd64.exe*  train_data/
+   74  build/        inference_results/  README.md                环境搭建步骤.md
+   75  configs/      LICENSE             README_ch.md
+   76  deploy/       MANIFEST.in         requirments.txt
+   77  doc/          paddleocr.py        result.txt
+   78  zousijia@zhjk-zousijia MINGW64 /f/Users/zousijia/Desktop/PaddleOCR (main)
+   79  $
+   80  git add
+   81  zousijia@zhjk-zousijia MINGW64 /f/Users/zousijia/Desktop/PaddleOCR (main)
+   82  $
+   83  zousijia@zhjk-zousijia MINGW64 /f/Users/zousijia/Desktop/PaddleOCR (main)
+   84  git add * -f
+   85  git remote add origin https://github.com/brillian32/PaddleOCR.git
+   86  git push -u origin master
+   87  git commit -m "Second commit"
+   88  git remote add origin https://github.com/brillian32/PaddleOCR.git
+   89  git push -u origin master
+   90  git remote add origin https://github.com/brillian32/PaddleOCR.git
+   91  git push -u origin main
+   92  git branch -M master2
+   93  git remote add origin https://github.com/brillian32/PaddleOCR.git
+   94  git push -u origin master
+   95  git push -u origin master2
+   96  git init
+   97  git init
+   98  git add -f inference
+   99  git remote add origin https://github.com/brillian32/PaddleOCR.git
+  100  git commit -m "first commit"
+  101  git checkout main
+  102  echo "# PPOCR-DOCKER" >> README.md
+  103  ls
+  104  git init
+  105  git add README.md
+  106  git commit -m "first commit"
+  107  git branch -M main
+  108  git remote add origin https://github.com/brillian32/PPOCR-DOCKER.git
+  109  git push -u origin main
+  110  ls
+  111  ls
+  112  git add *
+  113  git commit -m "2 commit"
+  114  git push origin main
+  115  git add *
+  116  git commit -m "3 commit"
+  117  git push origin main
+  118  touch history.log
+  119  history > history.log 
